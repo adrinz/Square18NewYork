@@ -1,5 +1,6 @@
 import React from 'react';
-import { Star, ShoppingCart, Heart, Package } from 'lucide-react';
+import { ExternalLink, Package, Truck } from 'lucide-react';
+import { ETSY_SHOP_URL } from '../../data/products';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
@@ -7,19 +8,21 @@ const ProductCard = ({ product }) => {
     name,
     price,
     originalPrice,
-    rating,
-    reviews,
     image,
-    badge,
-    inStock,
+    freeShipping,
+    etsyUrl,
   } = product;
 
   const discount = originalPrice
     ? Math.round(((originalPrice - price) / originalPrice) * 100)
     : null;
 
+  const handleClick = () => {
+    window.open(etsyUrl || ETSY_SHOP_URL, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <article className="product-card">
+    <article className="product-card product-card--clickable" onClick={handleClick}>
       {/* Image Container */}
       <div className="product-card__image-container">
         {image ? (
@@ -36,43 +39,21 @@ const ProductCard = ({ product }) => {
           </div>
         )}
         
-        {/* Badges */}
-        {badge && (
-          <span className="product-card__badge">{badge}</span>
-        )}
-        
+        {/* Sale Badge */}
         {discount && (
-          <span className="product-card__discount">-{discount}%</span>
+          <span className="product-card__discount">{discount}% off</span>
         )}
 
-        {/* Quick Actions */}
-        <div className="product-card__actions">
-          <button className="product-card__action-btn" aria-label="Add to wishlist">
-            <Heart size={18} />
-          </button>
-          <button className="product-card__action-btn" aria-label="Add to cart">
-            <ShoppingCart size={18} />
-          </button>
+        {/* Etsy Link Indicator */}
+        <div className="product-card__etsy-badge">
+          <ExternalLink size={14} />
+          <span>View on Etsy</span>
         </div>
       </div>
 
       {/* Product Info */}
       <div className="product-card__info">
         <h3 className="product-card__name">{name}</h3>
-        
-        {/* Rating */}
-        <div className="product-card__rating">
-          <div className="product-card__stars">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                size={14}
-                className={i < Math.floor(rating) ? 'star--filled' : 'star--empty'}
-              />
-            ))}
-          </div>
-          <span className="product-card__reviews">({reviews})</span>
-        </div>
 
         {/* Price */}
         <div className="product-card__price-container">
@@ -84,9 +65,12 @@ const ProductCard = ({ product }) => {
           )}
         </div>
 
-        {/* Stock Status */}
-        {!inStock && (
-          <span className="product-card__out-of-stock">Out of Stock</span>
+        {/* Free Shipping */}
+        {freeShipping && (
+          <div className="product-card__shipping">
+            <Truck size={14} />
+            <span>FREE shipping</span>
+          </div>
         )}
       </div>
     </article>

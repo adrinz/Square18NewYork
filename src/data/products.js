@@ -1,172 +1,26 @@
 // Product Data for Square18 New York
+// Products are synced from our Etsy store: https://www.etsy.com/shop/square18newyork
+
+export const ETSY_SHOP_URL = 'https://www.etsy.com/shop/square18newyork';
 
 export const categories = [
   { id: 'all', name: 'All Products', slug: 'all' },
-  { id: 'electronics', name: 'Electronics', slug: 'electronics' },
-  { id: 'home-garden', name: 'Home & Garden', slug: 'home-garden' },
-  { id: 'fashion', name: 'Fashion & Accessories', slug: 'fashion' },
-  { id: 'health-beauty', name: 'Health & Beauty', slug: 'health-beauty' },
-  { id: 'sports', name: 'Sports & Outdoors', slug: 'sports' },
-  { id: 'toys-games', name: 'Toys & Games', slug: 'toys-games' },
 ];
 
+// Add your Etsy products here with the following format:
+// {
+//   id: 1,
+//   name: 'Product Name',
+//   price: 29.99,
+//   originalPrice: null, // or original price if on sale
+//   image: 'https://i.etsystatic.com/...', // Etsy image URL
+//   freeShipping: true,
+//   etsyUrl: 'https://www.etsy.com/listing/...', // Direct link to listing
+// }
+
 export const products = [
-  {
-    id: 1,
-    name: 'Wireless Bluetooth Earbuds Pro',
-    category: 'electronics',
-    price: 79.99,
-    originalPrice: 129.99,
-    rating: 4.8,
-    reviews: 245,
-    image: null,
-    badge: 'Best Seller',
-    inStock: true,
-    description: 'Premium wireless earbuds with active noise cancellation and 24-hour battery life.',
-  },
-  {
-    id: 2,
-    name: 'Minimalist Ceramic Vase Set',
-    category: 'home-garden',
-    price: 45.00,
-    originalPrice: null,
-    rating: 4.9,
-    reviews: 128,
-    image: null,
-    badge: 'New Arrival',
-    inStock: true,
-    description: 'Elegant set of 3 ceramic vases perfect for modern home decor.',
-  },
-  {
-    id: 3,
-    name: 'Premium Leather Crossbody Bag',
-    category: 'fashion',
-    price: 149.00,
-    originalPrice: 199.00,
-    rating: 4.7,
-    reviews: 89,
-    image: null,
-    badge: null,
-    inStock: true,
-    description: 'Handcrafted genuine leather bag with adjustable strap and multiple compartments.',
-  },
-  {
-    id: 4,
-    name: 'Organic Skincare Gift Set',
-    category: 'health-beauty',
-    price: 65.00,
-    originalPrice: 85.00,
-    rating: 4.9,
-    reviews: 312,
-    image: null,
-    badge: 'Popular',
-    inStock: true,
-    description: 'Complete skincare routine with organic, cruelty-free ingredients.',
-  },
-  {
-    id: 5,
-    name: 'Smart Fitness Watch',
-    category: 'electronics',
-    price: 199.99,
-    originalPrice: 249.99,
-    rating: 4.6,
-    reviews: 567,
-    image: null,
-    badge: null,
-    inStock: true,
-    description: 'Advanced fitness tracking with heart rate monitor and GPS.',
-  },
-  {
-    id: 6,
-    name: 'Yoga Mat Premium Edition',
-    category: 'sports',
-    price: 55.00,
-    originalPrice: null,
-    rating: 4.8,
-    reviews: 201,
-    image: null,
-    badge: 'Eco-Friendly',
-    inStock: true,
-    description: 'Extra thick, non-slip yoga mat made from sustainable materials.',
-  },
-  {
-    id: 7,
-    name: 'Wooden Building Blocks Set',
-    category: 'toys-games',
-    price: 39.99,
-    originalPrice: 49.99,
-    rating: 4.9,
-    reviews: 156,
-    image: null,
-    badge: null,
-    inStock: true,
-    description: 'Educational wooden blocks set with 100 pieces in various shapes and colors.',
-  },
-  {
-    id: 8,
-    name: 'Scented Candle Collection',
-    category: 'home-garden',
-    price: 32.00,
-    originalPrice: null,
-    rating: 4.7,
-    reviews: 98,
-    image: null,
-    badge: 'Gift Idea',
-    inStock: true,
-    description: 'Set of 4 hand-poured soy candles with natural essential oils.',
-  },
-  {
-    id: 9,
-    name: 'Polarized Sunglasses',
-    category: 'fashion',
-    price: 89.00,
-    originalPrice: 120.00,
-    rating: 4.5,
-    reviews: 234,
-    image: null,
-    badge: null,
-    inStock: true,
-    description: 'Classic aviator style with UV400 protection and scratch-resistant lenses.',
-  },
-  {
-    id: 10,
-    name: 'Portable Bluetooth Speaker',
-    category: 'electronics',
-    price: 59.99,
-    originalPrice: 79.99,
-    rating: 4.6,
-    reviews: 445,
-    image: null,
-    badge: 'Top Rated',
-    inStock: true,
-    description: 'Waterproof speaker with 360° sound and 20-hour playtime.',
-  },
-  {
-    id: 11,
-    name: 'Stainless Steel Water Bottle',
-    category: 'sports',
-    price: 28.00,
-    originalPrice: null,
-    rating: 4.8,
-    reviews: 367,
-    image: null,
-    badge: null,
-    inStock: true,
-    description: 'Double-wall insulated bottle keeps drinks cold 24hrs or hot 12hrs.',
-  },
-  {
-    id: 12,
-    name: 'Natural Lip Care Set',
-    category: 'health-beauty',
-    price: 24.99,
-    originalPrice: 34.99,
-    rating: 4.7,
-    reviews: 189,
-    image: null,
-    badge: null,
-    inStock: true,
-    description: 'Set of 5 organic lip balms in assorted flavors.',
-  },
+  // Products will be added here from your Etsy store
+  // Please provide your Etsy product details to populate this list
 ];
 
 export const testimonials = [
@@ -197,9 +51,9 @@ export const testimonials = [
 ];
 
 export const stats = [
-  { label: 'Products', value: '250+' },
+  { label: 'Products', value: '100+' },
   { label: 'Happy Customers', value: '10,000+' },
-  { label: 'Brand Partners', value: '150+' },
+  { label: 'Brand Partners', value: '50+' },
   { label: 'Years of Excellence', value: '4+' },
 ];
 

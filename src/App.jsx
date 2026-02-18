@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Header, Footer } from './components/common';
+import { Header, Footer, AnnouncementBanner } from './components/common';
 import {
   HomePage,
   ProductsPage,
@@ -28,6 +28,7 @@ function App() {
         <Route path="/terms" element={<ShippingPage />} />
       </Routes>
       <Footer />
+      <AnnouncementBanner />
     </div>
   );
 }

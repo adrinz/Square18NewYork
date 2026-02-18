@@ -10,7 +10,7 @@ Square18 New York is an online retail store (e-commerce) established in 2021, sp
 
 **Business Information:**
 - **Entity:** Square18 New York LLC
-- **Location:** 44 Schwab Rd, Melville, NY 11747
+- **Location:** 160 Walt Whitman Rd, Huntington Station, NY 11746
 - **Established:** 2021
 
 ## Features

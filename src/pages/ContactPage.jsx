@@ -23,8 +23,8 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'info@square18ny.com',
-      link: 'mailto:info@square18ny.com',
+      content: 'info@square18newyork.com',
+      link: 'mailto:info@square18newyork.com',
       description: 'We respond within 24 hours',
     },
     {
@@ -32,12 +32,12 @@ const ContactPage = () => {
       title: 'Call Us',
       content: '(646) 639-8287',
       link: 'tel:+16466398287',
-      description: 'Mon-Fri, 9am-5pm EST',
+      description: 'Mon-Fri, 9:00 AM - 8:00 PM EST',
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: '44 Schwab Rd, Melville, NY 11747',
+      content: '160 Walt Whitman Rd, Huntington Station, NY 11746',
       link: 'https://maps.google.com',
       description: 'By appointment only',
     },
@@ -46,7 +46,7 @@ const ContactPage = () => {
       title: 'Business Hours',
       content: 'Monday - Friday',
       link: null,
-      description: '9:00 AM - 5:00 PM EST',
+      description: '9:00 AM - 8:00 PM EST',
     },
   ];
 
@@ -262,7 +262,7 @@ const ContactPage = () => {
         <div className="contact-map__placeholder">
           <MapPin size={48} />
           <h3>Square18 New York</h3>
-          <p>44 Schwab Rd, Melville, NY 11747</p>
+          <p>160 Walt Whitman Rd, Huntington Station, NY 11746</p>
         </div>
       </section>
     </main>

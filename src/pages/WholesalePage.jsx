@@ -154,14 +154,14 @@ const WholesalePage = () => {
               <div className="metric-card">
                 <Package size={24} />
                 <div className="metric-card__content">
-                  <span className="metric-card__value">250+</span>
+                  <span className="metric-card__value">100+</span>
                   <span className="metric-card__label">Products Listed</span>
                 </div>
               </div>
               <div className="metric-card">
                 <TrendingUp size={24} />
                 <div className="metric-card__content">
-                  <span className="metric-card__value">150+</span>
+                  <span className="metric-card__value">50+</span>
                   <span className="metric-card__label">Brand Partners</span>
                 </div>
               </div>
@@ -394,7 +394,7 @@ const WholesalePage = () => {
               <h3 className="wholesale-contact__title">Email Us</h3>
               <p className="wholesale-contact__text">
                 For partnership inquiries:<br />
-                <a href="mailto:partners@square18ny.com">partners@square18ny.com</a>
+                <a href="mailto:info@square18newyork.com">info@square18newyork.com</a>
               </p>
             </div>
             <div className="wholesale-contact__item">
@@ -403,7 +403,7 @@ const WholesalePage = () => {
               </div>
               <h3 className="wholesale-contact__title">Call Us</h3>
               <p className="wholesale-contact__text">
-                Mon-Fri, 9am-5pm EST:<br />
+                Mon-Fri, 9:00 AM - 8:00 PM EST:<br />
                 <a href="tel:+16466398287">(646) 639-8287</a>
               </p>
             </div>
@@ -413,8 +413,8 @@ const WholesalePage = () => {
               </div>
               <h3 className="wholesale-contact__title">Visit Us</h3>
               <p className="wholesale-contact__text">
-                44 Schwab Rd<br />
-                Melville, NY 11747
+                160 Walt Whitman Rd<br />
+                Huntington Station, NY 11746
               </p>
             </div>
           </div>

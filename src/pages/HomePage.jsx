@@ -9,8 +9,7 @@ import {
   Star,
   Quote
 } from 'lucide-react';
-import { ProductCard } from '../components/products';
-import { products, testimonials, stats, features, categories } from '../data/products';
+import { testimonials, stats, features } from '../data/products';
 import './HomePage.css';
 
 const iconMap = {
@@ -21,8 +20,6 @@ const iconMap = {
 };
 
 const HomePage = () => {
-  const featuredProducts = products.slice(0, 8);
-
   return (
     <main className="home">
       {/* Hero Section */}
@@ -75,57 +72,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="categories section">
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="section-subtitle">Browse By</span>
-            <h2 className="section-title">Shop Categories</h2>
-            <div className="divider divider-center"></div>
-          </div>
-          <div className="categories__grid">
-            {categories.filter(cat => cat.id !== 'all').map((category) => (
-              <Link
-                key={category.id}
-                to={`/products?category=${category.slug}`}
-                className="category-card"
-              >
-                <div className="category-card__content">
-                  <h3 className="category-card__name">{category.name}</h3>
-                  <span className="category-card__link">
-                    Explore <ArrowRight size={16} />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Products */}
-      <section className="featured section">
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="section-subtitle">Hand-Picked For You</span>
-            <h2 className="section-title">Featured Products</h2>
-            <div className="divider divider-center"></div>
-            <p className="section-desc">
-              Discover our carefully curated selection of trending products
-            </p>
-          </div>
-          <div className="featured__grid">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-          <div className="featured__cta text-center">
-            <Link to="/products" className="btn btn-primary btn-lg">
-              View All Products
-              <ArrowRight size={20} />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* About/Brand Story Banner */}
       <section className="brand-story">

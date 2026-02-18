@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Search, SlidersHorizontal, Grid, List, X } from 'lucide-react';
+import { Search, SlidersHorizontal, Grid, List, X, ExternalLink, ShoppingBag, Store, Truck, Shield, CreditCard } from 'lucide-react';
 import { ProductCard } from '../components/products';
-import { products, categories } from '../data/products';
+import { products, categories, ETSY_SHOP_URL } from '../data/products';
 import './ProductsPage.css';
 
 const ProductsPage = () => {
@@ -73,10 +73,11 @@ const ProductsPage = () => {
         <div className="container">
           <h1 className="products-page__title">Shop All Products</h1>
           <p className="products-page__subtitle">
-            Discover our curated collection of quality merchandise
+            Discover our curated collection of quality merchandise — Click any product to shop on Etsy
           </p>
         </div>
       </section>
+
 
       <div className="container">
         <div className="products-page__layout">
@@ -235,9 +236,41 @@ const ProductsPage = () => {
                 ))}
               </div>
             ) : (
-              <div className="products-page__empty">
-                <h3>No products found</h3>
-                <p>Try adjusting your filters or search query</p>
+              <div className="products-page__etsy-redirect">
+                <div className="etsy-redirect__icon">
+                  <Store size={64} />
+                </div>
+                <h2 className="etsy-redirect__title">Shop Our Products on Etsy</h2>
+                <p className="etsy-redirect__description">
+                  Browse our complete collection of quality products on our official Etsy store. 
+                  Enjoy secure checkout, buyer protection, and fast shipping.
+                </p>
+                
+                <a
+                  href={ETSY_SHOP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="etsy-redirect__btn"
+                >
+                  <ShoppingBag size={20} />
+                  Visit Our Etsy Shop
+                  <ExternalLink size={16} />
+                </a>
+
+                <div className="etsy-redirect__features">
+                  <div className="etsy-redirect__feature">
+                    <Truck size={24} />
+                    <span>Free Shipping Available</span>
+                  </div>
+                  <div className="etsy-redirect__feature">
+                    <Shield size={24} />
+                    <span>Buyer Protection</span>
+                  </div>
+                  <div className="etsy-redirect__feature">
+                    <CreditCard size={24} />
+                    <span>Secure Checkout</span>
+                  </div>
+                </div>
               </div>
             )}
           </div>

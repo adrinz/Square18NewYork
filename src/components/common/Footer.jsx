@@ -133,13 +133,13 @@ const Footer = () => {
                 <li className="footer__contact-item">
                   <MapPin size={18} />
                   <span>
-                    44 Schwab Rd<br />
-                    Melville, NY 11747
+                    160 Walt Whitman Rd<br />
+                    Huntington Station, NY 11746
                   </span>
                 </li>
                 <li className="footer__contact-item">
                   <Mail size={18} />
-                  <a href="mailto:info@square18ny.com">info@square18ny.com</a>
+                  <a href="mailto:info@square18newyork.com">info@square18newyork.com</a>
                 </li>
                 <li className="footer__contact-item">
                   <Phone size={18} />
