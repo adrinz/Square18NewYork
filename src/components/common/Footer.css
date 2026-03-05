@@ -131,15 +131,16 @@
 }
 
 .footer__logo-image {
-  height: 50px;
+  height: 48px;
   width: auto;
-  filter: brightness(0) invert(1);
 }
 
 .footer__brand-desc {
   color: var(--color-gray-400);
-  line-height: var(--leading-relaxed);
+  font-size: var(--text-sm);
+  line-height: 1.7;
   margin-bottom: var(--space-6);
+  text-align: justify;
 }
 
 /* Social Links */
