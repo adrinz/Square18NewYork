@@ -18,221 +18,70 @@
 .products-page__subtitle {
   color: var(--color-gray-600);
   margin-bottom: 0;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Etsy Banner */
-.products-page__etsy-banner {
-  padding: var(--space-6) 0;
+/* Marketplace Tabs */
+.products-page__marketplace-tabs {
+  padding: var(--space-6) 0 0;
   background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
-.etsy-banner {
+.marketplace-tabs {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-6);
-  padding: var(--space-6) var(--space-8);
-  background: linear-gradient(135deg, #F56400 0%, #D45500 100%);
-  border-radius: var(--radius-xl);
-  color: var(--color-white);
+  gap: var(--space-1);
 }
 
-.etsy-banner__content {
+.marketplace-tab {
   display: flex;
-  align-items: center;
-  gap: var(--space-6);
-}
-
-.etsy-banner__icon {
-  flex-shrink: 0;
-}
-
-.etsy-banner__title {
-  font-size: var(--text-xl);
-  font-weight: var(--font-semibold);
-  color: var(--color-white);
-  margin-bottom: var(--space-1);
-}
-
-.etsy-banner__description {
-  font-size: var(--text-sm);
-  opacity: 0.9;
-  margin-bottom: 0;
-}
-
-.etsy-banner__btn {
-  display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
   font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
-  color: #F56400;
-  background-color: var(--color-white);
-  border-radius: var(--radius-full);
-  white-space: nowrap;
-  transition: all var(--transition-fast);
-}
-
-.etsy-banner__btn:hover {
-  background-color: var(--color-gray-100);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .etsy-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: var(--space-6);
-  }
-
-  .etsy-banner__content {
-    flex-direction: column;
-    gap: var(--space-4);
-  }
-
-  .etsy-banner__title {
-    font-size: var(--text-lg);
-  }
-}
-
-/* Layout */
-.products-page__layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: var(--space-10);
-  padding: var(--space-12) 0;
-}
-
-@media (max-width: 1024px) {
-  .products-page__layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Sidebar */
-.products-page__sidebar {
-  position: sticky;
-  top: 100px;
-  height: fit-content;
-}
-
-@media (max-width: 1024px) {
-  .products-page__sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 320px;
-    max-width: 90vw;
-    background-color: var(--color-white);
-    padding: var(--space-6);
-    z-index: var(--z-modal);
-    transform: translateX(-100%);
-    transition: transform var(--transition-base);
-    overflow-y: auto;
-  }
-
-  .products-page__sidebar--open {
-    transform: translateX(0);
-    box-shadow: var(--shadow-2xl);
-  }
-}
-
-.products-page__sidebar-header {
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-6);
-  padding-bottom: var(--space-4);
-  border-bottom: 1px solid var(--color-gray-200);
-}
-
-@media (max-width: 1024px) {
-  .products-page__sidebar-header {
-    display: flex;
-  }
-}
-
-.products-page__sidebar-title {
-  font-size: var(--text-lg);
-  font-weight: var(--font-semibold);
-}
-
-.products-page__sidebar-close {
-  color: var(--color-gray-500);
-  transition: color var(--transition-fast);
-}
-
-.products-page__sidebar-close:hover {
-  color: var(--color-primary);
-}
-
-/* Filter Section */
-.filter-section {
-  margin-bottom: var(--space-8);
-}
-
-.filter-section__title {
-  font-family: var(--font-primary);
-  font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wider);
-  color: var(--color-gray-800);
-  margin-bottom: var(--space-4);
-}
-
-.filter-section__list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.filter-section__btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: var(--space-3) var(--space-4);
-  font-size: var(--text-sm);
-  color: var(--color-gray-600);
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: var(--radius-md);
-  text-align: left;
-  transition: all var(--transition-fast);
-}
-
-.filter-section__btn:hover {
-  background-color: var(--color-gray-100);
-}
-
-.filter-section__btn--active {
-  color: var(--color-primary);
-  background-color: var(--color-gray-100);
   font-weight: var(--font-medium);
+  color: var(--color-gray-500);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
 }
 
-.filter-section__count {
-  font-size: var(--text-xs);
-  color: var(--color-gray-400);
+.marketplace-tab:hover {
+  color: var(--color-primary);
+  background-color: var(--color-gray-50);
 }
 
-/* Price Range */
-.filter-section__price-inputs {
-  display: flex;
+.marketplace-tab--active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.marketplace-tab__count {
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-500);
+  background-color: var(--color-gray-100);
+  border-radius: var(--radius-full);
 }
 
-.filter-section__price-inputs .form-input {
-  padding: var(--space-2) var(--space-3);
-  font-size: var(--text-sm);
+.marketplace-tab--active .marketplace-tab__count {
+  color: var(--color-white);
+  background-color: var(--color-primary);
 }
 
-.filter-section__price-inputs span {
-  color: var(--color-gray-400);
+/* Content */
+.products-page__content {
+  padding: var(--space-8) 0 var(--space-12);
 }
 
 /* Toolbar */
@@ -281,29 +130,6 @@
   display: flex;
   align-items: center;
   gap: var(--space-4);
-}
-
-.products-page__filter-toggle {
-  display: none;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-4);
-  font-size: var(--text-sm);
-  font-weight: var(--font-medium);
-  color: var(--color-primary);
-  background-color: var(--color-gray-100);
-  border-radius: var(--radius-md);
-  transition: background-color var(--transition-fast);
-}
-
-.products-page__filter-toggle:hover {
-  background-color: var(--color-gray-200);
-}
-
-@media (max-width: 1024px) {
-  .products-page__filter-toggle {
-    display: flex;
-  }
 }
 
 /* Sort */
@@ -367,79 +193,141 @@
   margin-bottom: 0;
 }
 
+/* Loading State */
+.products-page__loading {
+  text-align: center;
+  padding: var(--space-16) var(--space-8);
+  color: var(--color-gray-500);
+}
+
+.products-page__spinner {
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--space-4);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.products-page__loading p {
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+/* Error State */
+.products-page__error {
+  text-align: center;
+  padding: var(--space-10) var(--space-8);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-8);
+}
+
+.products-page__error p {
+  color: var(--color-gray-600);
+  margin-bottom: var(--space-4);
+}
+
+.products-page__error .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
 /* Products Grid */
 .products-page__grid {
   display: grid;
-  gap: var(--space-6);
+  gap: 20px;
 }
 
 .products-page__grid--grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .products-page__grid--list {
   grid-template-columns: 1fr;
 }
 
+@media (max-width: 1400px) {
+.products-page__grid--grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+}
+
 @media (max-width: 1200px) {
   .products-page__grid--grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .products-page__grid--grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-page__grid--grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }
 
 /* Empty State */
-.products-page__empty {
+.products-page__empty-state {
   text-align: center;
-  padding: var(--space-16) var(--space-8);
+  padding: var(--space-12) var(--space-8);
   background-color: var(--color-gray-50);
   border-radius: var(--radius-lg);
+  color: var(--color-gray-400);
 }
 
-.products-page__empty h3 {
+.products-page__empty-state svg {
+  margin-bottom: var(--space-4);
+}
+
+.products-page__empty-state h3 {
   font-size: var(--text-xl);
+  color: var(--color-gray-700);
   margin-bottom: var(--space-2);
 }
 
-.products-page__empty p {
-  color: var(--color-gray-600);
+.products-page__empty-state p {
+  color: var(--color-gray-500);
   margin-bottom: 0;
 }
 
-/* Etsy Redirect Section */
-.products-page__etsy-redirect {
+/* Store Redirect Section */
+.products-page__store-redirect {
   text-align: center;
   padding: var(--space-16) var(--space-8);
+  margin-top: var(--space-12);
   background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
   border-radius: var(--radius-xl);
   border: 2px dashed var(--color-gray-200);
 }
 
-.etsy-redirect__icon {
+.store-redirect__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 120px;
   height: 120px;
-  background: linear-gradient(135deg, #F56400 0%, #D45500 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-gray-800) 100%);
   color: var(--color-white);
   border-radius: var(--radius-full);
   margin-bottom: var(--space-8);
 }
 
-.etsy-redirect__title {
+.store-redirect__title {
   font-size: var(--text-3xl);
   font-weight: var(--font-bold);
   color: var(--color-primary);
   margin-bottom: var(--space-4);
 }
 
-.etsy-redirect__description {
+.store-redirect__description {
   font-size: var(--text-lg);
   color: var(--color-gray-600);
   max-width: 500px;
@@ -447,7 +335,14 @@
   line-height: var(--leading-relaxed);
 }
 
-.etsy-redirect__btn {
+.store-redirect__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.store-redirect__btn {
   display: inline-flex;
   align-items: center;
   gap: var(--space-3);
@@ -455,18 +350,33 @@
   font-size: var(--text-lg);
   font-weight: var(--font-semibold);
   color: var(--color-white);
-  background: linear-gradient(135deg, #F56400 0%, #D45500 100%);
   border-radius: var(--radius-full);
   transition: all var(--transition-base);
+}
+
+.store-redirect__btn:hover {
+  transform: translateY(-3px);
+}
+
+.store-redirect__btn--etsy {
+  background: linear-gradient(135deg, #F56400 0%, #D45500 100%);
   box-shadow: 0 4px 14px rgba(245, 100, 0, 0.4);
 }
 
-.etsy-redirect__btn:hover {
-  transform: translateY(-3px);
+.store-redirect__btn--etsy:hover {
   box-shadow: 0 6px 20px rgba(245, 100, 0, 0.5);
 }
 
-.etsy-redirect__features {
+.store-redirect__btn--ebay {
+  background: linear-gradient(135deg, #0064D2 0%, #0050A8 100%);
+  box-shadow: 0 4px 14px rgba(0, 100, 210, 0.4);
+}
+
+.store-redirect__btn--ebay:hover {
+  box-shadow: 0 6px 20px rgba(0, 100, 210, 0.5);
+}
+
+.store-redirect__features {
   display: flex;
   justify-content: center;
   gap: var(--space-10);
@@ -475,7 +385,7 @@
   border-top: 1px solid var(--color-gray-200);
 }
 
-.etsy-redirect__feature {
+.store-redirect__feature {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -483,42 +393,60 @@
   color: var(--color-gray-600);
 }
 
-.etsy-redirect__feature svg {
-  color: #F56400;
+.store-redirect__feature svg {
+  color: var(--color-secondary);
 }
 
-.etsy-redirect__feature span {
+.store-redirect__feature span {
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .etsy-redirect__title {
+  .marketplace-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .marketplace-tab {
+    padding: var(--space-3) var(--space-4);
+    white-space: nowrap;
+  }
+
+  .products-page__toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .products-page__search {
+    max-width: none;
+  }
+
+  .products-page__toolbar-right {
+    justify-content: space-between;
+  }
+
+  .store-redirect__title {
     font-size: var(--text-2xl);
   }
 
-  .etsy-redirect__description {
+  .store-redirect__description {
     font-size: var(--text-base);
   }
 
-  .etsy-redirect__features {
+  .store-redirect__btn {
+    font-size: var(--text-base);
+    padding: var(--space-3) var(--space-6);
+  }
+
+  .store-redirect__features {
     flex-direction: column;
     gap: var(--space-6);
   }
 
-  .etsy-redirect__feature {
+  .store-redirect__feature {
     flex-direction: row;
     gap: var(--space-3);
-  }
-}
-
-/* Mobile Overlay */
-@media (max-width: 1024px) {
-  .products-page__sidebar--open::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
   }
 }
