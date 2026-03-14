@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingBag, Search, User } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
@@ -58,20 +58,6 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-
-        {/* Header Actions */}
-        <div className="header__actions">
-          <button className="header__action-btn" aria-label="Search">
-            <Search size={20} />
-          </button>
-          <button className="header__action-btn" aria-label="Account">
-            <User size={20} />
-          </button>
-          <button className="header__action-btn header__cart-btn" aria-label="Cart">
-            <ShoppingBag size={20} />
-            <span className="header__cart-count">0</span>
-          </button>
-        </div>
 
         {/* Mobile Menu Toggle */}
         <button
