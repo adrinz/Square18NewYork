@@ -21,8 +21,8 @@
 .product-card__image-container {
   position: relative;
   aspect-ratio: 1;
-  max-height: 180px;
   overflow: hidden;
+  background-color: #f8f8f8;
 }
 
 .product-card__image {
