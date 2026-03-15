@@ -8,7 +8,8 @@ import {
   Clock,
   Send,
   MessageSquare,
-  Headphones
+  Headphones,
+  Loader2
 } from 'lucide-react';
 import './ContactPage.css';
 
@@ -299,8 +300,17 @@ const ContactPage = () => {
                   <p className="form-error">Something went wrong. Please try again or email us directly at info@square18newyork.com.</p>
                 )}
                 <button type="submit" className="btn btn-primary btn-lg" disabled={isSubmitting}>
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                  <Send size={18} />
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={18} className="form-btn-spinner" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send size={18} />
+                    </>
+                  )}
                 </button>
               </form>
             </div>

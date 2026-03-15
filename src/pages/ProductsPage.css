@@ -293,6 +293,7 @@
 .products-page__grid {
   display: grid;
   gap: 20px;
+  animation: fade-in 0.4s ease;
 }
 
 .products-page__grid--grid {

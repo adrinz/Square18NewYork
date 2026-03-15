@@ -80,6 +80,40 @@ img {
   display: block;
 }
 
+/* Form Loading Spinner (shared) */
+.form-btn-spinner {
+  animation: form-spinner 1s linear infinite;
+}
+
+@keyframes form-spinner {
+  to { transform: rotate(360deg); }
+}
+
+/* Page Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease forwards;
+}
+
 button {
   font-family: inherit;
   cursor: pointer;

@@ -5,3 +5,4 @@ export { default as AboutPage } from './AboutPage';
 export { default as WholesalePage } from './WholesalePage';
 export { default as ContactPage } from './ContactPage';
 export { default as ShippingPage } from './ShippingPage';
+export { default as NotFoundPage } from './NotFoundPage';

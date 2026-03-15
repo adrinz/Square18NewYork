@@ -8,6 +8,7 @@ import {
   WholesalePage,
   ContactPage,
   ShippingPage,
+  NotFoundPage,
 } from './pages';
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/faq" element={<ContactPage />} />
         <Route path="/privacy" element={<ShippingPage />} />
         <Route path="/terms" element={<ShippingPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
       <AnnouncementBanner />

@@ -11,7 +11,8 @@ import {
   BarChart3,
   Mail,
   Building,
-  Phone
+  Phone,
+  Loader2
 } from 'lucide-react';
 import './WholesalePage.css';
 
@@ -434,8 +435,17 @@ const WholesalePage = () => {
               )}
               <div className="wholesale-form__submit">
                 <button type="submit" className="btn btn-primary btn-lg" disabled={isSubmitting}>
-                  {isSubmitting ? 'Submitting...' : 'Submit Application'}
-                  <ArrowRight size={20} />
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={20} className="form-btn-spinner" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Submit Application
+                      <ArrowRight size={20} />
+                    </>
+                  )}
                 </button>
               </div>
             </form>
