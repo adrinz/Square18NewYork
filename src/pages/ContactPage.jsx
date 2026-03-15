@@ -55,7 +55,7 @@ const ContactPage = () => {
   const faqItems = [
     {
       question: 'What are your shipping options?',
-      answer: 'We offer standard shipping (5-7 business days), express shipping (2-3 business days), and overnight delivery. Free shipping is available on orders over $50.',
+      answer: 'We offer standard shipping (5-7 business days), express shipping (2-3 business days), and overnight delivery. Standard shipping is free on all orders.',
     },
     {
       question: 'What is your return policy?',

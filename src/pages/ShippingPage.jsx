@@ -36,8 +36,8 @@ const ShippingPage = () => {
     {
       name: 'Standard Shipping',
       time: '5-7 Business Days',
-      price: '$5.99',
-      freeOver: '$50',
+      price: 'Free',
+      freeOver: null,
       description: 'Most economical option for non-urgent orders.',
     },
     {
@@ -167,7 +167,7 @@ const ShippingPage = () => {
               <CreditCard size={24} />
               <div className="info-box__content">
                 <h4>Free Shipping</h4>
-                <p>Enjoy free standard shipping on all orders over $50.</p>
+                <p>Enjoy free standard shipping on all orders.</p>
               </div>
             </div>
           </div>
