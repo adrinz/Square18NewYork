@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { 
   Mail, 
   Phone, 
@@ -11,6 +12,7 @@ import {
 import './ContactPage.css';
 
 const ContactPage = () => {
+  const { pathname } = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -68,6 +70,15 @@ const ContactPage = () => {
       answer: 'Currently, we only ship within the United States. We\'re working on expanding to international markets soon.',
     },
   ];
+
+  useEffect(() => {
+    if (pathname === '/faq') {
+      const el = document.getElementById('faq');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [pathname]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -239,7 +250,7 @@ const ContactPage = () => {
             </div>
 
             {/* FAQ Sidebar */}
-            <div className="contact-faq">
+            <div id="faq" className="contact-faq">
               <div className="contact-faq__header">
                 <Headphones size={32} className="contact-faq__header-icon" />
                 <h3 className="contact-faq__title">Frequently Asked Questions</h3>

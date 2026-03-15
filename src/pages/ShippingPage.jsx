@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { 
   Truck, 
   Package, 
@@ -12,7 +12,26 @@ import {
 } from 'lucide-react';
 import './ShippingPage.css';
 
+const SECTION_IDS = {
+  '/shipping': 'shipping',
+  '/returns': 'returns',
+  '/privacy': 'privacy',
+  '/terms': 'terms',
+};
+
 const ShippingPage = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const sectionId = SECTION_IDS[pathname];
+    if (sectionId) {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [pathname]);
+
   const shippingOptions = [
     {
       name: 'Standard Shipping',
@@ -95,7 +114,7 @@ const ShippingPage = () => {
       </section>
 
       {/* Shipping Options */}
-      <section className="shipping-options section">
+      <section id="shipping" className="shipping-options section">
         <div className="container">
           <div className="section-header">
             <div className="section-header__icon">
@@ -156,7 +175,7 @@ const ShippingPage = () => {
       </section>
 
       {/* Returns Section */}
-      <section className="returns-section section">
+      <section id="returns" className="returns-section section">
         <div className="container">
           <div className="section-header">
             <div className="section-header__icon">
@@ -221,7 +240,7 @@ const ShippingPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="shipping-faq section">
+      <section id="faq" className="shipping-faq section">
         <div className="container">
           <div className="section-header text-center">
             <span className="section-subtitle">Common Questions</span>
@@ -254,6 +273,49 @@ const ShippingPage = () => {
               <h4>How long do refunds take?</h4>
               <p>Refunds are processed within 5-7 business days after we receive your return. It may take additional time for the refund to appear on your statement.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Privacy Policy Section */}
+      <section id="privacy" className="shipping-faq section">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="section-subtitle">Legal</span>
+            <h2 className="section-title">Privacy Policy</h2>
+            <div className="divider divider-center"></div>
+          </div>
+          <div className="returns-intro" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <p>
+              At Square18 New York, we respect your privacy. We collect only the information necessary 
+              to process your orders and improve your shopping experience. Your data is never sold to 
+              third parties. We use secure encryption for all transactions and comply with applicable 
+              data protection regulations.
+            </p>
+            <p>
+              For questions about our privacy practices, please contact us at info@square18newyork.com.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Terms of Service Section */}
+      <section id="terms" className="shipping-faq section">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="section-subtitle">Legal</span>
+            <h2 className="section-title">Terms of Service</h2>
+            <div className="divider divider-center"></div>
+          </div>
+          <div className="returns-intro" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <p>
+              By using our website and services, you agree to these terms. All purchases are subject 
+              to our shipping and return policies. We reserve the right to update these terms; continued 
+              use constitutes acceptance of changes.
+            </p>
+            <p>
+              For questions about our terms, please contact us at info@square18newyork.com.
+            </p>
           </div>
         </div>
       </section>

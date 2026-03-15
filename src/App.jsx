@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Header, Footer, AnnouncementBanner } from './components/common';
+import { Header, Footer, AnnouncementBanner, ScrollToTop } from './components/common';
 import {
   HomePage,
   ProductsPage,
@@ -14,6 +14,7 @@ import './App.css';
 function App() {
   return (
     <div className="app">
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
