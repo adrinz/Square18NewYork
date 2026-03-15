@@ -66,10 +66,10 @@ const WholesalePage = () => {
   ];
 
   const audienceInfo = [
-    { label: 'Primary Age Group', value: '25-45 years' },
+    { label: 'Primary Age Group', value: '3-65 years' },
     { label: 'Location', value: 'United States (Nationwide)' },
-    { label: 'Interests', value: 'Home, Fashion, Electronics, Lifestyle' },
-    { label: 'Average Order Value', value: '$75-150' },
+    { label: 'Interests', value: 'Home, Decor, Electronics, Lifestyle, Lighting, Toys' },
+    { label: 'Average Order Value', value: '$15-55' },
     { label: 'Customer Demographics', value: 'Urban Professionals, Families' },
   ];
 
