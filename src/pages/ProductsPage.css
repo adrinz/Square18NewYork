@@ -84,6 +84,54 @@
   padding: var(--space-8) 0 var(--space-12);
 }
 
+/* Trust Section */
+.products-page__trust-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.products-page__trusted-by {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.products-page__trusted-by-label {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+.products-page__trusted-by-count {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+}
+
+.products-page__trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.products-page__trust-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-700);
+}
+
+.products-page__trust-badge svg {
+  color: var(--color-secondary);
+}
+
 /* Toolbar */
 .products-page__toolbar {
   display: flex;
@@ -184,13 +232,20 @@
 
 /* Results Info */
 .products-page__results-info {
-  margin-bottom: var(--space-6);
+  margin-bottom: 0;
 }
 
 .products-page__results-info p {
   font-size: var(--text-sm);
   color: var(--color-gray-600);
   margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .products-page__trust-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* Loading State */

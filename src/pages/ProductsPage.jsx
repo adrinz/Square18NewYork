@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ExternalLink, ShoppingBag, Store, Truck, Shield, CreditCard } from 'lucide-react';
+import { ExternalLink, ShoppingBag, Store, Truck, Shield, CreditCard, Search, Lock } from 'lucide-react';
 import ProductCard from '../components/products/ProductCard';
 import SEO from '../components/common/SEO';
 import products from '../data/products';
@@ -7,14 +7,49 @@ import './ProductsPage.css';
 
 const ETSY_SHOP_URL = 'https://www.etsy.com/shop/square18newyork';
 const EBAY_SHOP_URL = 'https://www.ebay.com/usr/square18newyork';
+const TRUSTED_CUSTOMERS = '10,000+';
+
+const SORT_OPTIONS = [
+  { value: 'default', label: 'Default' },
+  { value: 'price-asc', label: 'Price: Low to High' },
+  { value: 'price-desc', label: 'Price: High to Low' },
+  { value: 'name-asc', label: 'Name: A to Z' },
+  { value: 'name-desc', label: 'Name: Z to A' },
+];
 
 const ProductsPage = () => {
   const [activeTab, setActiveTab] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('default');
 
   const filteredProducts = useMemo(() => {
-    if (activeTab === 'all') return products;
-    return products.filter(p => p.marketplace === activeTab);
-  }, [activeTab]);
+    let result = activeTab === 'all' ? products : products.filter(p => p.marketplace === activeTab);
+    if (searchQuery.trim()) {
+      const query = searchQuery.trim().toLowerCase();
+      result = result.filter(p => p.name.toLowerCase().includes(query));
+    }
+    if (sortBy !== 'default') {
+      const sorted = [...result];
+      switch (sortBy) {
+        case 'price-asc':
+          sorted.sort((a, b) => (a.price || 0) - (b.price || 0));
+          break;
+        case 'price-desc':
+          sorted.sort((a, b) => (b.price || 0) - (a.price || 0));
+          break;
+        case 'name-asc':
+          sorted.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+          break;
+        case 'name-desc':
+          sorted.sort((a, b) => (b.name || '').localeCompare(a.name || ''));
+          break;
+        default:
+          break;
+      }
+      result = sorted;
+    }
+    return result;
+  }, [activeTab, searchQuery, sortBy]);
 
   const etsyCount = products.filter(p => p.marketplace === 'etsy').length;
   const ebayCount = products.filter(p => p.marketplace === 'ebay').length;
@@ -65,15 +100,74 @@ const ProductsPage = () => {
 
       <div className="container">
         <div className="products-page__content">
-          <div className="products-page__results-info">
-            <p>Showing {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''}</p>
+          {/* Trust badges & Why buy from us */}
+          <div className="products-page__trust-section">
+            <div className="products-page__trusted-by">
+              <span className="products-page__trusted-by-label">Trusted by</span>
+              <span className="products-page__trusted-by-count">{TRUSTED_CUSTOMERS}</span>
+              <span className="products-page__trusted-by-label">customers</span>
+            </div>
+            <div className="products-page__trust-badges">
+              <div className="products-page__trust-badge">
+                <Lock size={20} />
+                <span>SSL Secured</span>
+              </div>
+              <div className="products-page__trust-badge">
+                <CreditCard size={20} />
+                <span>Secure Payment</span>
+              </div>
+              <div className="products-page__trust-badge">
+                <Shield size={20} />
+                <span>Buyer Protection</span>
+              </div>
+            </div>
           </div>
 
+          {/* Toolbar: Search & Sort */}
+          <div className="products-page__toolbar">
+            <div className="products-page__search">
+              <Search size={20} className="products-page__search-icon" aria-hidden />
+              <input
+                type="search"
+                placeholder="Search products..."
+                className="products-page__search-input"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Search products by name"
+              />
+            </div>
+            <div className="products-page__toolbar-right">
+              <div className="products-page__sort">
+                <label htmlFor="sort-products" className="products-page__sort-label">Sort by</label>
+                <select
+                  id="sort-products"
+                  className="products-page__sort-select"
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  aria-label="Sort products"
+                >
+                  {SORT_OPTIONS.map((opt) => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="products-page__results-info">
+                <p>Showing {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''}</p>
+              </div>
+            </div>
+          </div>
+
+          {filteredProducts.length > 0 ? (
           <div className="products-page__grid products-page__grid--grid">
             {filteredProducts.map((product, index) => (
               <ProductCard key={`${product.marketplace}-${index}`} product={product} />
             ))}
           </div>
+          ) : (
+            <div className="products-page__empty-state">
+              <p>No products match your search. Try a different term or browse all products.</p>
+            </div>
+          )}
 
           <div className="products-page__store-redirect">
             <div className="store-redirect__icon">

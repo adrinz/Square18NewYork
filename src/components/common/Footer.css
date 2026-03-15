@@ -146,16 +146,8 @@
 .footer__newsletter-desc {
   color: var(--color-primary);
   opacity: 0.8;
-  margin-bottom: var(--space-2);
-  max-width: 400px;
-}
-
-.footer__newsletter-coming-soon {
-  font-size: var(--text-sm);
-  color: var(--color-primary);
-  opacity: 0.7;
-  font-style: italic;
   margin-bottom: 0;
+  max-width: 400px;
 }
 
 .footer__newsletter-form {

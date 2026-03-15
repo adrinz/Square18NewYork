@@ -90,9 +90,6 @@ const Footer = () => {
               <p className="footer__newsletter-desc">
                 Subscribe to receive updates on new arrivals, special offers, and exclusive events.
               </p>
-              <p className="footer__newsletter-coming-soon">
-                Coming soon — we&apos;ll notify you when you can sign up.
-              </p>
             </div>
             <div className="footer__newsletter-form-wrapper">
               <form className="footer__newsletter-form" onSubmit={handleNewsletterSubmit}>
