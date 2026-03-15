@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/common/SEO';
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -125,6 +126,11 @@ const WholesalePage = () => {
 
   return (
     <main className="wholesale-page">
+      <SEO
+        title="Wholesale & Partnerships"
+        description="Partner with Square18 New York. Expand your reach with our curated marketplace. Apply for wholesale and brand partnerships."
+        path="/wholesale"
+      />
       {/* Hero Section */}
       <section className="wholesale-hero">
         <div className="wholesale-hero__background">

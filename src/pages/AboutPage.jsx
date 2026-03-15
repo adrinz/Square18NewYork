@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/common/SEO';
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -14,6 +15,19 @@ import { stats } from '../data/products';
 import './AboutPage.css';
 
 const AboutPage = () => {
+  return (
+    <>
+      <SEO
+        title="Our Story"
+        description="Founded in 2021, Square18 New York brings you quality general merchandise. Learn about our values, mission, and commitment to excellence."
+        path="/about"
+      />
+      <AboutPageContent />
+    </>
+  );
+};
+
+const AboutPageContent = () => {
   const values = [
     {
       icon: Target,

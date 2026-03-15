@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import SEO from '../components/common/SEO';
 import { 
   Truck, 
   Package, 
@@ -19,8 +20,32 @@ const SECTION_IDS = {
   '/terms': 'terms',
 };
 
+const SEO_CONFIG = {
+  '/shipping': {
+    title: 'Shipping & Delivery',
+    description: 'Learn about our shipping options, delivery times, and free standard shipping. Track your order and get it delivered nationwide.',
+    path: '/shipping',
+  },
+  '/returns': {
+    title: 'Returns & Exchanges',
+    description: '30-day hassle-free return policy. Learn how to return items, our return guidelines, and non-returnable items.',
+    path: '/returns',
+  },
+  '/privacy': {
+    title: 'Privacy Policy',
+    description: 'Square18 New York privacy policy. Learn how we collect, use, and protect your personal information.',
+    path: '/privacy',
+  },
+  '/terms': {
+    title: 'Terms of Service',
+    description: 'Terms of service for Square18 New York. Read our policies for using our website and services.',
+    path: '/terms',
+  },
+};
+
 const ShippingPage = () => {
   const { pathname } = useLocation();
+  const seoConfig = useMemo(() => SEO_CONFIG[pathname] || SEO_CONFIG['/shipping'], [pathname]);
 
   useEffect(() => {
     const sectionId = SECTION_IDS[pathname];
@@ -98,6 +123,7 @@ const ShippingPage = () => {
 
   return (
     <main className="shipping-page">
+      <SEO title={seoConfig.title} description={seoConfig.description} path={seoConfig.path} />
       {/* Hero Section */}
       <section className="shipping-hero">
         <div className="container">

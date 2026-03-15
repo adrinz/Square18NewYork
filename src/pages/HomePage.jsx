@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/common/SEO';
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -22,6 +23,11 @@ const iconMap = {
 const HomePage = () => {
   return (
     <main className="home">
+      <SEO
+        title="Premium Online Retail"
+        description="Your premier destination for curated general merchandise. From everyday essentials to unique finds, we bring you quality products at exceptional value."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="hero">
         <div className="hero__background">

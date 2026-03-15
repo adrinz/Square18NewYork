@@ -15,7 +15,13 @@ import './Footer.css';
 
 const Footer = () => {
   const [showComingSoonBanner, setShowComingSoonBanner] = useState(false);
+  const [showSocialToast, setShowSocialToast] = useState(false);
   const currentYear = new Date().getFullYear();
+
+  const handleSocialClick = (e) => {
+    e.preventDefault();
+    setShowSocialToast(true);
+  };
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +33,12 @@ const Footer = () => {
     const timer = setTimeout(() => setShowComingSoonBanner(false), 4000);
     return () => clearTimeout(timer);
   }, [showComingSoonBanner]);
+
+  useEffect(() => {
+    if (!showSocialToast) return;
+    const timer = setTimeout(() => setShowSocialToast(false), 4000);
+    return () => clearTimeout(timer);
+  }, [showSocialToast]);
 
   const quickLinks = [
     { path: '/products', label: 'Shop All' },
@@ -52,6 +64,23 @@ const Footer = () => {
 
   return (
     <footer className="footer">
+      {/* Social Media Toast */}
+      {showSocialToast && (
+        <div className="footer__social-toast" role="alert">
+          <p className="footer__social-toast-text">
+            Social media links are not available at the moment, we are working on the updates.
+          </p>
+          <button
+            type="button"
+            className="footer__social-toast-close"
+            onClick={() => setShowSocialToast(false)}
+            aria-label="Close"
+          >
+            <X size={18} />
+          </button>
+        </div>
+      )}
+
       {/* Newsletter Section */}
       <div className="footer__newsletter">
         <div className="container">
@@ -117,16 +146,15 @@ const Footer = () => {
               </p>
               <div className="footer__social">
                 {socialLinks.map((social) => (
-                  <a
+                  <button
                     key={social.label}
-                    href={social.url}
+                    type="button"
                     className="footer__social-link"
                     aria-label={social.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={handleSocialClick}
                   >
                     <social.icon size={20} />
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>

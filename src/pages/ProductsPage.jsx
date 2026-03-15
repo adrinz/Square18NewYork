@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { ExternalLink, ShoppingBag, Store, Truck, Shield, CreditCard } from 'lucide-react';
 import ProductCard from '../components/products/ProductCard';
+import SEO from '../components/common/SEO';
 import products from '../data/products';
 import './ProductsPage.css';
 
@@ -20,6 +21,11 @@ const ProductsPage = () => {
 
   return (
     <main className="products-page">
+      <SEO
+        title="Shop All Products"
+        description="Discover our Premium Home, Decor, Arts, Fashion & Lifestyle goods with curated quality and everyday excellence. Shop on Etsy or eBay."
+        path="/products"
+      />
       <section className="products-page__header">
         <div className="container">
           <h1 className="products-page__title">Shop All Products</h1>

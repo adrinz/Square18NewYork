@@ -55,6 +55,62 @@
   opacity: 0.8;
 }
 
+/* Social Media Toast */
+.footer__social-toast {
+  position: fixed;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-2xl);
+  max-width: 90%;
+  animation: footer-toast-slide-up 0.3s ease;
+}
+
+@keyframes footer-toast-slide-up {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.footer__social-toast-text {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.footer__social-toast-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  background: transparent;
+  border: none;
+  color: var(--color-gray-500);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.footer__social-toast-close:hover {
+  color: var(--color-gray-700);
+  opacity: 1;
+}
+
 /* Newsletter Section */
 .footer__newsletter {
   background-color: var(--color-secondary);
@@ -217,6 +273,10 @@
   justify-content: center;
   width: 40px;
   height: 40px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font: inherit;
   color: var(--color-white);
   background-color: var(--color-primary-light);
   border-radius: var(--radius-full);

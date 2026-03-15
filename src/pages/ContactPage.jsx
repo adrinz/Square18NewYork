@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
+import SEO from '../components/common/SEO';
 import { 
   Mail, 
   Phone, 
@@ -75,6 +76,21 @@ const ContactPage = () => {
     },
   ];
 
+  const seoConfig = useMemo(() => {
+    if (pathname === '/faq') {
+      return {
+        title: 'FAQ',
+        description: 'Frequently asked questions about shipping, returns, order tracking, and more. Get answers from Square18 New York.',
+        path: '/faq',
+      };
+    }
+    return {
+      title: 'Contact Us',
+      description: 'Have a question or need assistance? Reach out to Square18 New York. We respond within 24 hours.',
+      path: '/contact',
+    };
+  }, [pathname]);
+
   useEffect(() => {
     if (pathname === '/faq') {
       const el = document.getElementById('faq');
@@ -133,6 +149,7 @@ const ContactPage = () => {
 
   return (
     <main className="contact-page">
+      <SEO title={seoConfig.title} description={seoConfig.description} path={seoConfig.path} />
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="container">
