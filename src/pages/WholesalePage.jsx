@@ -14,6 +14,8 @@ import {
 } from 'lucide-react';
 import './WholesalePage.css';
 
+const FORMSUBMIT_URL = 'https://formsubmit.co/ajax/info@square18newyork.com';
+
 const WholesalePage = () => {
   const [formData, setFormData] = useState({
     companyName: '',
@@ -26,6 +28,8 @@ const WholesalePage = () => {
     productsInterested: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const benefits = [
     {
@@ -72,11 +76,51 @@ const WholesalePage = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We will review your application and contact you shortly.');
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    try {
+      const response = await fetch(FORMSUBMIT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Wholesale Partnership Application',
+          _template: 'box',
+          _replyto: formData.email,
+          companyName: formData.companyName,
+          contactName: formData.contactName,
+          email: formData.email,
+          phone: formData.phone,
+          website: formData.website || '(not provided)',
+          businessType: formData.businessType,
+          annualRevenue: formData.annualRevenue || '(not provided)',
+          productsInterested: formData.productsInterested || '(not provided)',
+          message: formData.message,
+        }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSubmitStatus('success');
+        setFormData({
+          companyName: '',
+          contactName: '',
+          email: '',
+          phone: '',
+          website: '',
+          businessType: '',
+          annualRevenue: '',
+          productsInterested: '',
+          message: '',
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -372,9 +416,19 @@ const WholesalePage = () => {
                 ></textarea>
               </div>
 
+              {submitStatus === 'success' && (
+                <p className="wholesale-form__success">
+                  Thank you for your interest! We will review your application and contact you within 3-5 business days.
+                </p>
+              )}
+              {submitStatus === 'error' && (
+                <p className="wholesale-form__error">
+                  Something went wrong. Please try again or email us directly at info@square18newyork.com.
+                </p>
+              )}
               <div className="wholesale-form__submit">
-                <button type="submit" className="btn btn-primary btn-lg">
-                  Submit Application
+                <button type="submit" className="btn btn-primary btn-lg" disabled={isSubmitting}>
+                  {isSubmitting ? 'Submitting...' : 'Submit Application'}
                   <ArrowRight size={20} />
                 </button>
               </div>

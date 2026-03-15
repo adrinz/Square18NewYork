@@ -230,3 +230,22 @@ a.contact-info__content:hover {
   color: var(--color-gray-600);
   margin-bottom: 0;
 }
+
+/* Form Status Messages */
+.form-success {
+  padding: var(--space-4);
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--color-success);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+}
+
+.form-error {
+  padding: var(--space-4);
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+}

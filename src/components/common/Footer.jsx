@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Mail, 
@@ -8,12 +8,25 @@ import {
   Instagram, 
   Twitter, 
   Linkedin,
-  ArrowRight
+  ArrowRight,
+  X
 } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
+  const [showComingSoonBanner, setShowComingSoonBanner] = useState(false);
   const currentYear = new Date().getFullYear();
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    setShowComingSoonBanner(true);
+  };
+
+  useEffect(() => {
+    if (!showComingSoonBanner) return;
+    const timer = setTimeout(() => setShowComingSoonBanner(false), 4000);
+    return () => clearTimeout(timer);
+  }, [showComingSoonBanner]);
 
   const quickLinks = [
     { path: '/products', label: 'Shop All' },
@@ -48,19 +61,39 @@ const Footer = () => {
               <p className="footer__newsletter-desc">
                 Subscribe to receive updates on new arrivals, special offers, and exclusive events.
               </p>
+              <p className="footer__newsletter-coming-soon">
+                Coming soon — we&apos;ll notify you when you can sign up.
+              </p>
             </div>
-            <form className="footer__newsletter-form">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="footer__newsletter-input"
-                aria-label="Email address"
-              />
-              <button type="submit" className="footer__newsletter-btn">
-                Subscribe
-                <ArrowRight size={18} />
-              </button>
-            </form>
+            <div className="footer__newsletter-form-wrapper">
+              <form className="footer__newsletter-form" onSubmit={handleNewsletterSubmit}>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="footer__newsletter-input"
+                  aria-label="Email address"
+                />
+                <button type="submit" className="footer__newsletter-btn">
+                  Subscribe
+                  <ArrowRight size={18} />
+                </button>
+              </form>
+              {showComingSoonBanner && (
+                <div className="footer__coming-soon-banner" role="alert">
+                  <p className="footer__coming-soon-banner-text">
+                    Coming soon — this feature is not available at the moment.
+                  </p>
+                  <button
+                    type="button"
+                    className="footer__coming-soon-banner-close"
+                    onClick={() => setShowComingSoonBanner(false)}
+                    aria-label="Close banner"
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -11,6 +11,8 @@ import {
 } from 'lucide-react';
 import './ContactPage.css';
 
+const FORMSUBMIT_URL = 'https://formsubmit.co/ajax/info@square18newyork.com';
+
 const ContactPage = () => {
   const { pathname } = useLocation();
   const [formData, setFormData] = useState({
@@ -20,6 +22,8 @@ const ContactPage = () => {
     orderNumber: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const contactInfo = [
     {
@@ -85,17 +89,46 @@ const ContactPage = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you within 24 hours.');
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      orderNumber: '',
-      message: '',
-    });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    try {
+      const subjectLabels = {
+        order: 'Order Inquiry',
+        shipping: 'Shipping Question',
+        returns: 'Returns & Exchanges',
+        product: 'Product Question',
+        wholesale: 'Wholesale Inquiry',
+        feedback: 'Feedback',
+        other: 'Other',
+      };
+      const response = await fetch(FORMSUBMIT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `Contact: ${subjectLabels[formData.subject] || formData.subject}`,
+          _template: 'box',
+          _replyto: formData.email,
+          name: formData.name,
+          email: formData.email,
+          subject: subjectLabels[formData.subject] || formData.subject,
+          orderNumber: formData.orderNumber || '(not provided)',
+          message: formData.message,
+        }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', orderNumber: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -242,8 +275,14 @@ const ContactPage = () => {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-lg">
-                  Send Message
+                {submitStatus === 'success' && (
+                  <p className="form-success">Thank you for your message! We will get back to you within 24 hours.</p>
+                )}
+                {submitStatus === 'error' && (
+                  <p className="form-error">Something went wrong. Please try again or email us directly at info@square18newyork.com.</p>
+                )}
+                <button type="submit" className="btn btn-primary btn-lg" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                   <Send size={18} />
                 </button>
               </form>
