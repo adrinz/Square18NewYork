@@ -46,3 +46,18 @@ node scripts/fetch-products.js
 ```
 
 This fetches from the Etsy RSS feed and eBay store page. Use the CSV import above when you need all Etsy products.
+
+---
+
+## Build the Trip Plan PDF
+
+Renders `DISNEY_WORLD_TRIP_PLAN_AUG_2026.md` into a print-ready, letter-size PDF with a cover page and table of contents:
+
+```bash
+npm run build:trip-pdf
+
+# Or with explicit paths:
+node scripts/build-trip-pdf.js input.md output.pdf
+```
+
+Edit the markdown file and re-run to regenerate. The script has no npm dependencies — it converts the markdown itself and prints through headless Google Chrome, so the only requirement is Chrome or Chromium on your `PATH` (set `CHROME_BIN` to point at a specific browser).
