@@ -106,7 +106,7 @@ Download **My Disney Experience**, create accounts, and link all three tickets, 
 | **Today** | Call Southwest about Sianna's seat on the Aug 17 return |
 | **Tue Aug 11, 7:00 AM ET** | Lightning Lane Multi Pass goes on sale for your **Aug 14** Animal Kingdom day (off-site guests book 3 days ahead) |
 | **Wed Aug 12, 7:00 AM ET** | Lightning Lane Multi Pass goes on sale for your **Aug 15** Magic Kingdom day |
-| **Fri Aug 14, 7:00 AM ET** | Join the **Bluey's Wild World virtual queue** in the app. You do *not* need to be in the park. It sells out in seconds; a second drop at 10:00 AM requires being inside Animal Kingdom |
+| ~~Fri Aug 14, 7:00 AM ET~~ | **No longer needed.** Bluey's Wild World dropped its virtual queue on June 2, 2026 and is now walk-up standby — no alarm, no boarding group. Just go early, since the line grows through the day |
 | **~Aug 11** | Call the hotel at (407) 239-1144 to confirm the current shuttle schedule |
 | **Sun Aug 16, evening** | Pre-book the 5:45 AM airport car for Monday |
 
@@ -147,13 +147,13 @@ Animal Kingdom is the best park in Orlando for a 2-year-old, because most of wha
 
 | Time | Plan |
 |---|---|
-| **7:00 AM sharp** | **Join the Bluey's Wild World virtual queue in the app.** Do it from the hotel room, from bed if you like. It goes in seconds |
 | 6:45–7:15 AM | Complimentary made-to-order breakfast at the hotel (or grab-and-go if you booked Tusker House) |
 | 7:20 AM | Leave for the park. **Take an Uber/Lyft directly to Animal Kingdom** (about 15 minutes, $15–20). The hotel shuttle does not run a direct Animal Kingdom route — you'd go to the TTC or EPCOT and transfer to a Disney bus, which costs you an hour |
 | **8:00 AM** | Park opens. Walk straight past the Tree of Life to Africa and ride **Kilimanjaro Safaris first.** Do not detour. Animals are most active in the cool morning, and this is the single best thing in the park for a toddler — real giraffes and elephants at close range, no darkness, no drops, no waiting |
 | 8:45 AM | **Gorilla Falls Exploration Trail**, right next door — shaded, stroller-friendly, gorillas and hippos at toddler eye level |
 | **9:15 AM** | **Tusker House breakfast** in Harambe. Mickey, Donald, Daisy, and Goofy in safari gear come to your table. Air conditioning, sitting down, characters without a queue. A lovely birthday-eve celebration |
-| 10:30 AM | **Bluey's Wild World**, if you got a boarding group. The Wildlife Express Train station is right by Tusker House, so it's well placed. Two caveats: the full round trip runs **60–90 minutes for a 13-minute show**, and **strollers can't come into the show space.** It's pitched at ages 3 to 10, so a just-turned-2-year-old may enjoy Bluey and Bingo without following the games. If you don't get a boarding group, skip it without guilt |
+| 10:15 AM | **Bluey's Wild World** via the **Wildlife Express Train**, whose station is right by Tusker House. This is now **walk-up standby** (the virtual queue ended June 2, 2026), and wait times for both the train and the show are posted in the app and on a sign at the station. Go earlier rather than later — the line builds all morning and the whole thing closes at **3:45 PM.** Three caveats: the round trip runs **60–90 minutes for a 13-minute show**, **only folding strollers are allowed on the train**, and **strollers can't come into the show space.** It's pitched at ages 3 to 10, so Sianna may enjoy Bluey and Bingo without following the games |
+| 11:30 AM | **Adventurers Outpost** on Discovery Island — the **only place at Walt Disney World to meet Mickey and Minnie together**, here in safari outfits. Indoor, air-conditioned, no height requirement, and two identical greeting rooms so the line moves faster than the posted wait suggests. A perfect birthday-eve photo |
 | 12:00 PM | **Festival of the Lion King** (shows at 12:00 or 1:00). Air-conditioned, 30 minutes, huge puppets, live singing, no dark or scary passages. Reliably a toddler favorite, and you can hold her on your lap the whole time |
 | 12:45 PM | **Na'vi River Journey** in Pandora — a slow indoor boat ride through a glowing bioluminescent forest, no height requirement, no drops. Dim but not frightening, and only about 5 minutes |
 | 1:30 PM | Optional: **Maharajah Jungle Trek** (tigers) if energy holds, or **Discovery Island Trails** |
@@ -299,7 +299,7 @@ Good news: almost everything a 2-year-old wants to do has no height requirement.
 
 ### Animal Kingdom — no height requirement
 
-*Kilimanjaro Safaris* · *Na'vi River Journey* · *Gorilla Falls Exploration Trail* · *Maharajah Jungle Trek* · *Discovery Island Trails* · *Festival of the Lion King* · *Feathered Friends in Flight!* · *Winged Encounters* · *Bluey's Wild World* and *Wildlife Express Train* (virtual queue required) · *The Animation Experience*
+*Kilimanjaro Safaris* · *Na'vi River Journey* · *Gorilla Falls Exploration Trail* · *Maharajah Jungle Trek* · *Discovery Island Trails* · *Festival of the Lion King* · *Feathered Friends in Flight!* · *Winged Encounters* · *Bluey's Wild World* and *Wildlife Express Train* (walk-up standby) · *Adventurers Outpost* (Mickey and Minnie) · *The Animation Experience*
 
 Not recommended at 2 despite having no height limit: *Zootopia: Better Zoogether!* (dark 3D with water and air effects) and *Finding Nemo: The Big Blue... and Beyond!* (40 minutes).
 
@@ -419,7 +419,7 @@ Both parks have free air-conditioned Baby Care Centers with changing tables, nur
 
 - **All of DinoLand U.S.A. closed permanently on February 2, 2026** — DINOSAUR, TriceraTop Spin, The Boneyard, Restaurantosaurus, Chester & Hester's, Donald's Dino Bash. It becomes Tropical Americas (an Encanto dark ride, an Indiana Jones ride, and a carousel) in 2027. The park has noticeably fewer rides than usual right now, and losing The Boneyard hurts most for your age group.
 - **It's Tough to Be a Bug** was replaced by **Zootopia: Better Zoogether!** in November 2025.
-- **New:** **Bluey's Wild World** at Conservation Station opened May 26, 2026. The virtual queue now also gates the Wildlife Express Train and the Conservation Station animal-care experiences.
+- **New:** **Bluey's Wild World** at Conservation Station opened May 26, 2026. It launched with a virtual queue, but **that ended June 2, 2026** — it is now ordinary walk-up standby, reached via the Wildlife Express Train, operating 8:30 AM to 3:45 PM.
 
 ---
 
@@ -462,7 +462,7 @@ The range is wide almost entirely because of one line: whether you still need to
 
 1. **Confirm Sianna has her own purchased seat on the August 17 return flight.** She turns 2 on the 15th, and lap-infant travel ends at 2. This is the one item on the list that can stop you at a gate.
 2. **Book Tusker House and Crystal Palace today**, and add the Mickey cake to the Crystal Palace reservation.
-3. **Set a 7:00 AM alarm for August 14** for the Bluey virtual queue, and 7:00 AM alarms for August 11 and 12 for Lightning Lane.
+3. **Set 7:00 AM alarms for August 11 and 12** for Lightning Lane Multi Pass. (No Bluey alarm needed — that virtual queue is gone.)
 4. **Get the free birthday button at City Hall within five minutes of entering Magic Kingdom.** It shapes the entire day.
 5. **Protect the nap on both park days.** Every good toddler day at Disney World in August is really two short days with a nap in the middle.
 
